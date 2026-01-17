@@ -1,0 +1,128 @@
+[
+  {
+    "id": "OSINT-001",
+    "type": "credential_leak",
+    "source": "Dark Web Marketplace (BreachForums)",
+    "finding": "Email: jsmith@acme.com | Password: Summer2023! | Source: Unknown Stealer Log",
+    "severity": "critical",
+    "discovered_at": "2026-01-15T14:23:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-002",
+    "type": "credential_leak",
+    "source": "GitHub Public Repository",
+    "finding": "AWS Access Key exposed in commit history: AKIA...EXAMPLE (redacted). Repository: acme-corp/legacy-tools",
+    "severity": "critical",
+    "discovered_at": "2026-01-14T09:12:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-003",
+    "type": "dark_web_mention",
+    "source": "BreachForums",
+    "finding": "Post title: 'Looking for Acme Corp VPN access - will pay $5k'. Posted by known access broker.",
+    "severity": "high",
+    "discovered_at": "2026-01-14T22:45:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-004",
+    "type": "credential_leak",
+    "source": "Telegram Channel (Combolist)",
+    "finding": "Email: agarcia@acme.com | Password: Acme@2024 | Source: Corporate breach 2024",
+    "severity": "high",
+    "discovered_at": "2026-01-12T18:30:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-005",
+    "type": "data_exposure",
+    "source": "Pastebin",
+    "finding": "Internal Acme Corp IP addresses and server hostnames posted. Appears to be network diagram or asset inventory.",
+    "severity": "medium",
+    "discovered_at": "2026-01-16T11:20:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-006",
+    "type": "dark_web_mention",
+    "source": "Russian Forum (XSS.is)",
+    "finding": "Discussion thread about Acme Corp security posture, mentioning 'weak perimeter defenses' and 'outdated patches'.",
+    "severity": "medium",
+    "discovered_at": "2026-01-13T16:40:00Z",
+    "verified": false
+  },
+  {
+    "id": "OSINT-007",
+    "type": "credential_leak",
+    "source": "Have I Been Pwned",
+    "finding": "15 Acme Corp employee emails found in 'LinkedIn breach 2021' dataset.",
+    "severity": "medium",
+    "discovered_at": "2026-01-11T08:15:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-008",
+    "type": "brand_abuse",
+    "source": "Domain Registrar Monitoring",
+    "finding": "Domain registered: acme-corp-verify.com (typosquatting). WHOIS privacy enabled, registered 2026-01-10.",
+    "severity": "high",
+    "discovered_at": "2026-01-11T00:05:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-009",
+    "type": "social_media",
+    "source": "Twitter/X",
+    "finding": "Disgruntled ex-employee posting negative comments about Acme Corp security practices. Account: @acme_whistleblower",
+    "severity": "low",
+    "discovered_at": "2026-01-10T14:50:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-010",
+    "type": "data_exposure",
+    "source": "Shodan",
+    "finding": "Exposed Acme Corp Jenkins server at jenkins.acme.com with default credentials still enabled.",
+    "severity": "critical",
+    "discovered_at": "2026-01-09T20:30:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-011",
+    "type": "credential_leak",
+    "source": "Dark Web (RaidForums Mirror)",
+    "finding": "Database dump claiming to be from Acme Corp customer portal. Contains 12,453 customer records.",
+    "severity": "critical",
+    "discovered_at": "2026-01-08T12:00:00Z",
+    "verified": false
+  },
+  {
+    "id": "OSINT-012",
+    "type": "dark_web_mention",
+    "source": "Exploit.in Forum",
+    "finding": "User offering 'Acme Corp network access' for cryptocurrency. Post includes screenshot of internal network.",
+    "severity": "high",
+    "discovered_at": "2026-01-17T03:15:00Z",
+    "verified": false
+  },
+  {
+    "id": "OSINT-013",
+    "type": "code_exposure",
+    "source": "GitHub Gist",
+    "finding": "Internal API documentation with authentication tokens posted by contractor. Gist created 6 months ago.",
+    "severity": "high",
+    "discovered_at": "2026-01-16T10:00:00Z",
+    "verified": true
+  },
+  {
+    "id": "OSINT-014",
+    "type": "social_engineering",
+    "source": "LinkedIn",
+    "finding": "Fake recruiter profile claiming to be 'Acme Corp Talent Acquisition'. Sending malicious job offers to competitors' employees.",
+    "severity": "medium",
+    "discovered_at": "2026-01-15T09:30:00Z",
+    "verified": true
+  }
+]

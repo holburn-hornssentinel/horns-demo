@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ALT-001",
+    "severity": "critical",
+    "type": "malware",
+    "title": "Emotet Variant Detected on Endpoint",
+    "description": "Emotet malware variant detected on endpoint ACME-WS-042. Suspicious PowerShell execution followed by network beaconing to known C2 infrastructure. Immediate isolation recommended to prevent lateral movement.",
+    "affected_asset": "ACME-WS-042 (jsmith-laptop)",
+    "detected_at": "2026-01-17T08:23:14Z",
+    "status": "investigating",
+    "tags": ["malware", "emotet", "c2-communication", "high-priority"]
+  },
+  {
+    "id": "ALT-002",
+    "severity": "critical",
+    "type": "intrusion",
+    "title": "Unauthorized Admin Access from Foreign IP",
+    "description": "Suspicious administrative login detected from IP 185.234.72.19 (Russia). Account: svc_backup. This service account should only authenticate from internal systems. Possible credential compromise.",
+    "affected_asset": "DC-PRIMARY",
+    "detected_at": "2026-01-16T23:45:33Z",
+    "status": "open",
+    "tags": ["intrusion", "credential-compromise", "geo-anomaly"]
+  },
+  {
+    "id": "ALT-003",
+    "severity": "high",
+    "type": "vulnerability-exploit",
+    "title": "CVE-2024-21410 Exploitation Attempt",
+    "description": "Multiple attempts to exploit CVE-2024-21410 (Exchange Server Elevation of Privilege) detected. Attack originated from 103.45.221.88. WAF rules blocked 15/17 attempts.",
+    "affected_asset": "EXCHANGE-01",
+    "detected_at": "2026-01-17T14:12:07Z",
+    "status": "open",
+    "tags": ["cve-2024-21410", "exchange", "exploitation", "blocked"]
+  },
+  {
+    "id": "ALT-004",
+    "severity": "high",
+    "type": "data-exfiltration",
+    "title": "Unusual Data Transfer to Cloud Storage",
+    "description": "Employee account (agarcia@acme.com) uploaded 4.7 GB to personal Dropbox account during off-hours. Volume is 10x normal baseline. Potential data exfiltration or insider threat.",
+    "affected_asset": "ACME-WS-089 (agarcia-desktop)",
+    "detected_at": "2026-01-17T02:34:19Z",
+    "status": "investigating",
+    "tags": ["data-exfiltration", "insider-threat", "anomaly"]
+  },
+  {
+    "id": "ALT-005",
+    "severity": "high",
+    "type": "ransomware",
+    "title": "Ransomware Indicators Detected",
+    "description": "File encryption behavior detected on file server FS-PROD-03. Multiple files renamed with .locked extension. Shadow copies deleted. Immediate response required.",
+    "affected_asset": "FS-PROD-03",
+    "detected_at": "2026-01-16T19:22:41Z",
+    "status": "investigating",
+    "tags": ["ransomware", "encryption", "critical-infrastructure"]
+  },
+  {
+    "id": "ALT-006",
+    "severity": "high",
+    "type": "brute-force",
+    "title": "SSH Brute Force Attack",
+    "description": "5,234 failed SSH login attempts from 89.248.163.12 targeting ACME-WEB-01. Attack pattern matches known botnet behavior. Source IP added to blocklist.",
+    "affected_asset": "ACME-WEB-01",
+    "detected_at": "2026-01-17T11:08:52Z",
+    "status": "mitigated",
+    "tags": ["brute-force", "ssh", "botnet", "mitigated"]
+  },
+  {
+    "id": "ALT-007",
+    "severity": "medium",
+    "type": "policy-violation",
+    "title": "Unauthorized Software Installation",
+    "description": "TeamViewer remote access software installed on ACME-WS-127 without IT approval. Software violates corporate security policy and creates potential backdoor.",
+    "affected_asset": "ACME-WS-127 (mchen-laptop)",
+    "detected_at": "2026-01-17T09:45:22Z",
+    "status": "open",
+    "tags": ["policy-violation", "unauthorized-software", "remote-access"]
+  },
+  {
+    "id": "ALT-008",
+    "severity": "medium",
+    "type": "phishing",
+    "title": "Phishing Email with Malicious Attachment",
+    "description": "Phishing email with subject 'Urgent: Invoice Payment Required' delivered to 47 employees. Attachment contains malicious macro. 3 users opened attachment, 0 enabled macros.",
+    "affected_asset": "Email System",
+    "detected_at": "2026-01-17T07:13:09Z",
+    "status": "investigating",
+    "tags": ["phishing", "social-engineering", "email-security"]
+  },
+  {
+    "id": "ALT-009",
+    "severity": "medium",
+    "type": "configuration",
+    "title": "S3 Bucket Publicly Accessible",
+    "description": "AWS S3 bucket 'acme-prod-backups' configured with public read access. Bucket contains customer data and should be private. Misconfiguration detected during routine scan.",
+    "affected_asset": "AWS S3: acme-prod-backups",
+    "detected_at": "2026-01-16T16:30:44Z",
+    "status": "open",
+    "tags": ["cloud-security", "misconfiguration", "data-exposure"]
+  },
+  {
+    "id": "ALT-010",
+    "severity": "medium",
+    "type": "anomaly",
+    "title": "After-Hours Database Access",
+    "description": "Production database accessed at 3:47 AM by developer account (dbrown@acme.com). Time is outside normal work hours and user is not on-call. Possible compromised account.",
+    "affected_asset": "DB-PROD-01",
+    "detected_at": "2026-01-17T03:47:11Z",
+    "status": "investigating",
+    "tags": ["anomaly", "database", "after-hours"]
+  },
+  {
+    "id": "ALT-011",
+    "severity": "medium",
+    "type": "compliance",
+    "title": "PCI-DSS Compliance Violation",
+    "description": "Credit card processing system ACME-PCI-01 has not applied required security patches within 30-day compliance window. System is 12 days overdue for patching.",
+    "affected_asset": "ACME-PCI-01",
+    "detected_at": "2026-01-17T00:00:00Z",
+    "status": "open",
+    "tags": ["compliance", "pci-dss", "patching"]
+  },
+  {
+    "id": "ALT-012",
+    "severity": "low",
+    "type": "reconnaissance",
+    "title": "Port Scan Detected",
+    "description": "Comprehensive port scan detected from IP 45.142.212.35. Scanner probed 1,024 ports on perimeter firewall. No vulnerabilities exposed. Standard internet background noise.",
+    "affected_asset": "FIREWALL-01",
+    "detected_at": "2026-01-17T13:22:18Z",
+    "status": "closed",
+    "tags": ["reconnaissance", "port-scan", "informational"]
+  },
+  {
+    "id": "ALT-013",
+    "severity": "low",
+    "type": "certificate",
+    "title": "SSL Certificate Expiring Soon",
+    "description": "SSL certificate for api.acme.com expires in 14 days. Renewal process should be initiated to prevent service disruption.",
+    "affected_asset": "api.acme.com",
+    "detected_at": "2026-01-17T00:00:00Z",
+    "status": "open",
+    "tags": ["certificate", "ssl", "maintenance"]
+  },
+  {
+    "id": "ALT-014",
+    "severity": "low",
+    "type": "antivirus",
+    "title": "Antivirus Definition Out of Date",
+    "description": "Endpoint ACME-WS-201 has not updated antivirus definitions in 8 days. Device may be offline or experiencing update failures.",
+    "affected_asset": "ACME-WS-201",
+    "detected_at": "2026-01-17T06:00:00Z",
+    "status": "open",
+    "tags": ["antivirus", "endpoint-health", "updates"]
+  },
+  {
+    "id": "ALT-015",
+    "severity": "low",
+    "type": "authentication",
+    "title": "Multiple Failed Login Attempts",
+    "description": "User account kjones@acme.com had 12 failed login attempts over 2 hours. User reported forgotten password and successfully reset credentials.",
+    "affected_asset": "ACME-AD-01",
+    "detected_at": "2026-01-16T14:45:00Z",
+    "status": "closed",
+    "tags": ["authentication", "password-reset", "resolved"]
+  }
+]

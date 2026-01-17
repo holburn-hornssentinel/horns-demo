@@ -1,0 +1,122 @@
+[
+  {
+    "id": "IOC-001",
+    "type": "ip",
+    "indicator": "185.234.72.19",
+    "description": "Known APT29 (Cozy Bear) infrastructure. Associated with credential harvesting and lateral movement campaigns targeting technology companies.",
+    "first_seen": "2025-11-23",
+    "last_seen": "2026-01-16",
+    "confidence": "high",
+    "tags": ["apt29", "russia", "credential-theft", "c2"]
+  },
+  {
+    "id": "IOC-002",
+    "type": "domain",
+    "indicator": "acme-corp-verify.com",
+    "description": "Typosquatting domain mimicking legitimate Acme Corporation domain. Used in phishing campaigns targeting employees and customers.",
+    "first_seen": "2026-01-10",
+    "last_seen": "2026-01-17",
+    "confidence": "high",
+    "tags": ["phishing", "typosquatting", "impersonation"]
+  },
+  {
+    "id": "IOC-003",
+    "type": "hash",
+    "indicator": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "description": "SHA-256 hash of Emotet variant. Malware delivered via malicious Office documents with macro payloads.",
+    "first_seen": "2026-01-15",
+    "last_seen": "2026-01-17",
+    "confidence": "high",
+    "tags": ["emotet", "malware", "banking-trojan"]
+  },
+  {
+    "id": "IOC-004",
+    "type": "ip",
+    "indicator": "103.45.221.88",
+    "description": "IP address observed scanning for CVE-2024-21410 (Exchange vulnerability). Part of widespread exploitation campaign.",
+    "first_seen": "2026-01-12",
+    "last_seen": "2026-01-17",
+    "confidence": "medium",
+    "tags": ["scanning", "cve-2024-21410", "exchange"]
+  },
+  {
+    "id": "IOC-005",
+    "type": "domain",
+    "indicator": "update-microsoft-secure.com",
+    "description": "Malicious domain serving fake Microsoft security updates. Distributes ransomware payloads disguised as legitimate patches.",
+    "first_seen": "2026-01-08",
+    "last_seen": "2026-01-16",
+    "confidence": "high",
+    "tags": ["ransomware", "impersonation", "microsoft"]
+  },
+  {
+    "id": "IOC-006",
+    "type": "ip",
+    "indicator": "89.248.163.12",
+    "description": "Known SSH brute-force botnet node. Part of Mirai botnet variant targeting cloud infrastructure.",
+    "first_seen": "2025-12-01",
+    "last_seen": "2026-01-17",
+    "confidence": "high",
+    "tags": ["botnet", "mirai", "brute-force", "ssh"]
+  },
+  {
+    "id": "IOC-007",
+    "type": "hash",
+    "indicator": "d41d8cd98f00b204e9800998ecf8427e",
+    "description": "MD5 hash of TeamViewer installer modified with backdoor. Distributed via compromised software download sites.",
+    "first_seen": "2026-01-14",
+    "last_seen": "2026-01-17",
+    "confidence": "medium",
+    "tags": ["backdoor", "teamviewer", "supply-chain"]
+  },
+  {
+    "id": "IOC-008",
+    "type": "email",
+    "indicator": "billing@acme-invoices.com",
+    "description": "Email address used in invoice-themed phishing campaign. Sends malicious Excel documents with macro malware.",
+    "first_seen": "2026-01-16",
+    "last_seen": "2026-01-17",
+    "confidence": "high",
+    "tags": ["phishing", "email", "macro-malware"]
+  },
+  {
+    "id": "IOC-009",
+    "type": "url",
+    "indicator": "hxxps://dropbox-secure-share[.]ru/acme_backup.zip",
+    "description": "Malicious URL hosting alleged Acme Corp backup files. Likely data exfiltration endpoint or malware distribution point.",
+    "first_seen": "2026-01-15",
+    "last_seen": "2026-01-16",
+    "confidence": "medium",
+    "tags": ["exfiltration", "dropbox-abuse", "russia"]
+  },
+  {
+    "id": "IOC-010",
+    "type": "ip",
+    "indicator": "45.142.212.35",
+    "description": "Reconnaissance IP performing network enumeration. Associated with initial access broker (IAB) activity.",
+    "first_seen": "2026-01-17",
+    "last_seen": "2026-01-17",
+    "confidence": "low",
+    "tags": ["reconnaissance", "scanning", "iab"]
+  },
+  {
+    "id": "IOC-011",
+    "type": "domain",
+    "indicator": "login-verify-acme.net",
+    "description": "Credential phishing site mimicking Acme Corp's SSO login page. Captures usernames and passwords.",
+    "first_seen": "2026-01-13",
+    "last_seen": "2026-01-17",
+    "confidence": "high",
+    "tags": ["phishing", "credential-theft", "sso-abuse"]
+  },
+  {
+    "id": "IOC-012",
+    "type": "hash",
+    "indicator": "5f4dcc3b5aa765d61d8327deb882cf99",
+    "description": "SHA-256 hash of ransomware payload targeting file servers. Deletes shadow copies before encryption.",
+    "first_seen": "2026-01-16",
+    "last_seen": "2026-01-16",
+    "confidence": "high",
+    "tags": ["ransomware", "lockbit", "encryption"]
+  }
+]

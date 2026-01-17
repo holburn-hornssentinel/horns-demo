@@ -1,0 +1,81 @@
+# Horns Agent Configuration - SaaS Mode
+#
+# This configuration connects the agent to the Horns Sentinel cloud platform.
+# Best for: Small-medium businesses, quick deployment, minimal infrastructure.
+#
+# Data flow: Agent → Cloud Gateway (TLS) → Horns Sentinel Platform
+
+agent:
+  name: "acme-prod-01"
+  version: "1.2.4"
+
+  # Agent metadata
+  tags:
+    environment: "production"
+    location: "us-east-dc1"
+    team: "infrastructure"
+    criticality: "high"
+
+# Backend configuration
+backend:
+  type: "saas"
+
+  saas:
+    # Cloud platform endpoint (WebSocket for real-time data)
+    endpoint: "wss://agents.hornssentinel.cloud"
+
+    # API key for authentication (store in environment variable)
+    api_key: "${HORNS_AGENT_API_KEY}"
+
+    # Connection settings
+    reconnect_interval: "30s"
+    heartbeat_interval: "15s"
+
+    # Data transmission
+    batch_size: 100
+    batch_timeout: "10s"
+
+    # TLS configuration
+    tls:
+      enabled: true
+      verify_server: true
+
+# Collection modules
+modules:
+  # System metrics collection
+  stockyard:
+    enabled: true
+    collect_interval: "30s"
+
+    collectors:
+      - system_info
+      - processes
+      - network_connections
+      - docker_containers
+      - file_integrity
+
+  # Security monitoring
+  sentinel:
+    enabled: true
+    collect_interval: "60s"
+
+    monitors:
+      - vulnerability_scan
+      - log_analysis
+      - threat_detection
+      - compliance_check
+
+# Logging
+logging:
+  level: "info"
+  format: "json"
+  outputs:
+    - type: "file"
+      path: "/var/log/horns-agent/agent.log"
+      max_size: "100MB"
+      max_backups: 5
+
+# Resource limits
+resources:
+  max_memory: "512MB"
+  max_cpu_percent: 25

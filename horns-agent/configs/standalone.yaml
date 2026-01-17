@@ -1,0 +1,79 @@
+# Horns Agent Configuration - Standalone Mode
+#
+# This configuration runs the agent in air-gapped mode with no network connectivity.
+# Best for: High-security environments, demos, development/testing.
+#
+# Data flow: Agent → Local Files → Manual Export
+# Note: No network communication. All data written to local files.
+
+agent:
+  name: "acme-prod-01"
+  version: "1.2.4"
+
+  # Agent metadata
+  tags:
+    environment: "demo"
+    location: "localhost"
+    deployment: "standalone"
+
+# Backend configuration
+backend:
+  type: "local"
+
+  local:
+    # Output directory for collected data
+    output_dir: "./horns-agent/demo-output"
+
+    # Output format
+    format: "json"  # Options: json, csv, parquet
+
+    # File rotation
+    rotation:
+      enabled: true
+      max_size: "50MB"
+      max_age: "24h"
+      max_files: 10
+
+    # Compression
+    compression:
+      enabled: true
+      algorithm: "gzip"
+
+# Collection modules
+modules:
+  # System metrics collection
+  stockyard:
+    enabled: true
+    collect_interval: "30s"
+
+    collectors:
+      - system_info
+      - processes
+      - network_connections
+      - docker_containers
+
+  # Security monitoring
+  sentinel:
+    enabled: true
+    collect_interval: "60s"
+
+    monitors:
+      - vulnerability_scan
+      - log_analysis
+      - threat_detection
+
+# Logging
+logging:
+  level: "info"
+  format: "json"
+  outputs:
+    - type: "file"
+      path: "./horns-agent/demo-output/agent.log"
+      max_size: "10MB"
+      max_backups: 3
+    - type: "stdout"
+
+# Resource limits
+resources:
+  max_memory: "256MB"
+  max_cpu_percent: 10

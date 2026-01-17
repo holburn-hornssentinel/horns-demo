@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Sentinel Dashboard (Next.js)
+  dashboard:
+    build:
+      context: ./sentinel-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://api:8000
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - horns-demo
+
+  # Demo API Server (FastAPI)
+  api:
+    build:
+      context: ./api-server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api-server/data:/app/data:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - horns-demo
+
+  # HornsIQ Web Chat (FastAPI)
+  hornsiq:
+    build:
+      context: ./hornsiq-web
+      dockerfile: Dockerfile
+    ports:
+      - "3978:3978"
+    environment:
+      - ONYX_API_URL=${ONYX_API_URL:-http://welcometocostco:8080}
+      - ONYX_API_KEY=${ONYX_API_KEY:-}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - horns-demo
+      - onyx_onyx_net
+    extra_hosts:
+      - "welcometocostco:192.168.1.100"  # Update with actual IP
+
+networks:
+  horns-demo:
+    driver: bridge
+  onyx_onyx_net:
+    external: true
