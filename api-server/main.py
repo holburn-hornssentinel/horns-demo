@@ -378,9 +378,104 @@ async def restart_agent(agent_id: str):
     return {
         "status": "success",
         "action": "restart",
-        "agent_id": agent_id,
+        "agent_id": "agent_id",
         "message": f"Agent {agent_id} restart initiated. ETA: 30 seconds.",
         "eta_seconds": 30
+    }
+
+
+@app.get("/api/security-tools/status")
+async def get_security_tools_status():
+    """Get security tools status (matches production integrations)."""
+    return {
+        "tools": [
+            {
+                "id": "nuclei",
+                "name": "Nuclei",
+                "category": "vulnerability",
+                "status": "healthy",
+                "description": "Fast vulnerability scanner with 11,000+ templates for comprehensive security testing",
+                "capabilities": ["CVE Detection", "Misconfigurations", "Exposed Panels", "Web Vulnerabilities"],
+                "replaces": "Shodan",
+                "monthlySavings": 299,
+                "lastRun": "2 minutes ago",
+                "findingsCount": 127,
+                "icon": "🔍"
+            },
+            {
+                "id": "nmap",
+                "name": "Nmap",
+                "category": "network",
+                "status": "healthy",
+                "description": "Network discovery and service detection for comprehensive infrastructure mapping",
+                "capabilities": ["Port Scanning", "Service Detection", "OS Fingerprinting", "Network Topology"],
+                "replaces": "Commercial Scanner",
+                "monthlySavings": 500,
+                "lastRun": "5 minutes ago",
+                "findingsCount": 89,
+                "icon": "🌐"
+            },
+            {
+                "id": "httpx",
+                "name": "HTTPx",
+                "category": "network",
+                "status": "healthy",
+                "description": "Fast HTTP toolkit for web server detection and technology fingerprinting",
+                "capabilities": ["HTTP Probing", "Tech Stack Detection", "Web Server Analysis", "SSL/TLS Info"],
+                "replaces": "Commercial Tool",
+                "monthlySavings": 150,
+                "lastRun": "3 minutes ago",
+                "findingsCount": 234,
+                "icon": "🔗"
+            },
+            {
+                "id": "subfinder",
+                "name": "Subfinder",
+                "category": "network",
+                "status": "healthy",
+                "description": "Passive subdomain discovery using multiple OSINT sources for attack surface mapping",
+                "capabilities": ["Subdomain Enumeration", "DNS Discovery", "Attack Surface Mapping", "OSINT Aggregation"],
+                "replaces": "OSINT Platform",
+                "monthlySavings": 100,
+                "lastRun": "10 minutes ago",
+                "findingsCount": 156,
+                "icon": "🔎"
+            },
+            {
+                "id": "crowdsec",
+                "name": "CrowdSec",
+                "category": "threat-intel",
+                "status": "healthy",
+                "description": "Community-powered threat intelligence with real-time IP reputation and attack detection",
+                "capabilities": ["IP Reputation", "Attack Detection", "Community Intelligence", "Blocklist Management"],
+                "replaces": "TI Feed",
+                "monthlySavings": 200,
+                "lastRun": "1 minute ago",
+                "findingsCount": 342,
+                "icon": "🛡️"
+            },
+            {
+                "id": "contextal",
+                "name": "Contextal",
+                "category": "malware",
+                "status": "healthy",
+                "description": "Behavioral malware analysis engine for detecting threats through execution patterns",
+                "capabilities": ["Behavioral Analysis", "File Scanning", "Threat Detection", "Sandbox Execution"],
+                "replaces": "VirusTotal Enterprise",
+                "monthlySavings": 60,
+                "lastRun": "4 minutes ago",
+                "findingsCount": 23,
+                "icon": "🦠"
+            }
+        ],
+        "summary": {
+            "totalTools": 6,
+            "healthyTools": 6,
+            "degradedTools": 0,
+            "offlineTools": 0,
+            "totalMonthlySavings": 1309,
+            "totalFindings": 971
+        }
     }
 
 

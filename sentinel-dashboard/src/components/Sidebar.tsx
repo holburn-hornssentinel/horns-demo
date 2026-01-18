@@ -10,7 +10,8 @@ import {
   Activity,
   Server,
   MessageSquare,
-  TrendingUp
+  TrendingUp,
+  Wrench
 } from 'lucide-react'
 
 const navigation = [
@@ -19,6 +20,7 @@ const navigation = [
   { name: 'Threat Intel', href: '/threats', icon: Shield },
   { name: 'OSINT', href: '/osint', icon: Eye },
   { name: 'Sentiment AI', href: '/sentiment', icon: TrendingUp },
+  { name: 'Security Tools', href: '/tools', icon: Wrench },
   { name: 'Agents', href: '/agents', icon: Server },
   { name: 'HornsIQ Chat', href: '/chat', icon: MessageSquare },
 ]

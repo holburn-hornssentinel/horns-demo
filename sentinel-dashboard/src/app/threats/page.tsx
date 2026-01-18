@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import SeverityBadge from '@/components/SeverityBadge'
+import SourceBadge from '@/components/SourceBadge'
 import { useToast } from '@/components/Toast'
 import { Shield, Search, CheckCircle, Ban, AlertTriangle } from 'lucide-react'
 
@@ -13,6 +14,7 @@ interface Vulnerability {
   cve_id: string
   severity: 'critical' | 'high' | 'medium' | 'low'
   cvss_score: number
+  source?: string[]
   title: string
   description: string
   affected_systems: string[]
@@ -30,6 +32,7 @@ interface ThreatIntel {
   last_seen: string
   confidence: string
   tags: string[]
+  source?: string[]
 }
 
 export default function ThreatsPage() {
@@ -310,12 +313,13 @@ export default function ThreatsPage() {
           {filteredVulnerabilities.map((vuln) => (
             <div key={vuln.cve_id} onClick={() => setSelectedVuln(vuln)} className="bg-card rounded-lg p-6 border border-border hover:border-primary transition-colors cursor-pointer">
               <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 flex-wrap gap-2">
                   <SeverityBadge severity={vuln.severity} />
                   <span className="font-mono text-lg font-bold text-card-foreground">{vuln.cve_id}</span>
                   <span className="px-3 py-1 text-sm rounded-full bg-secondary text-foreground">
                     CVSS {vuln.cvss_score}
                   </span>
+                  {vuln.source && <SourceBadge source={vuln.source} />}
                 </div>
                 <div className="flex space-x-2">
                   {vuln.patched && (
@@ -373,6 +377,7 @@ export default function ThreatsPage() {
                 <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Indicator</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Description</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Confidence</th>
+                <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Source</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Tags</th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-muted-foreground uppercase">Actions</th>
               </tr>
@@ -395,6 +400,9 @@ export default function ThreatsPage() {
                     }`}>
                       {threat.confidence}
                     </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    {threat.source && <SourceBadge source={threat.source} />}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap gap-1">

@@ -5,10 +5,17 @@
     "cvss_score": 9.8,
     "title": "Microsoft Exchange Server Elevation of Privilege Vulnerability",
     "description": "A critical elevation of privilege vulnerability exists in Microsoft Exchange Server. An unauthenticated attacker could exploit this vulnerability to gain elevated privileges and execute arbitrary code on the server.",
-    "affected_systems": ["EXCHANGE-01", "EXCHANGE-02"],
+    "affected_systems": [
+      "EXCHANGE-01",
+      "EXCHANGE-02"
+    ],
     "published_date": "2024-02-13",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2024-3400",
@@ -16,10 +23,18 @@
     "cvss_score": 10.0,
     "title": "Palo Alto Networks PAN-OS Command Injection Vulnerability",
     "description": "A command injection vulnerability in the GlobalProtect feature of Palo Alto Networks PAN-OS software allows an unauthenticated attacker to execute arbitrary code with root privileges on the firewall.",
-    "affected_systems": ["FIREWALL-01", "FIREWALL-02"],
+    "affected_systems": [
+      "FIREWALL-01",
+      "FIREWALL-02"
+    ],
     "published_date": "2024-04-12",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "crowdsec",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-44487",
@@ -27,10 +42,18 @@
     "cvss_score": 7.5,
     "title": "HTTP/2 Rapid Reset Attack",
     "description": "The HTTP/2 protocol allows a denial of service via rapid stream resets. An attacker can send a large number of RST_STREAM frames to overwhelm the server.",
-    "affected_systems": ["ACME-WEB-01", "ACME-WEB-02", "ACME-API-01"],
+    "affected_systems": [
+      "ACME-WEB-01",
+      "ACME-WEB-02",
+      "ACME-API-01"
+    ],
     "published_date": "2023-10-10",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2024-21887",
@@ -38,10 +61,15 @@
     "cvss_score": 9.1,
     "title": "Ivanti Connect Secure Authentication Bypass",
     "description": "An authentication bypass vulnerability in Ivanti Connect Secure allows an unauthenticated attacker to access restricted resources and potentially execute arbitrary code.",
-    "affected_systems": ["VPN-GATEWAY-01"],
+    "affected_systems": [
+      "VPN-GATEWAY-01"
+    ],
     "published_date": "2024-01-31",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei"
+    ]
   },
   {
     "cve_id": "CVE-2023-4863",
@@ -49,10 +77,18 @@
     "cvss_score": 8.8,
     "title": "Google Chrome WebP Heap Buffer Overflow",
     "description": "Heap buffer overflow in WebP in Google Chrome allows a remote attacker to perform an out of bounds memory write via a crafted HTML page.",
-    "affected_systems": ["ACME-WS-001", "ACME-WS-042", "ACME-WS-089", "ACME-WS-127"],
+    "affected_systems": [
+      "ACME-WS-001",
+      "ACME-WS-042",
+      "ACME-WS-089",
+      "ACME-WS-127"
+    ],
     "published_date": "2023-09-25",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2024-0519",
@@ -60,10 +96,17 @@
     "cvss_score": 8.8,
     "title": "Google Chrome Out of Bounds Memory Access",
     "description": "Out of bounds memory access in V8 in Google Chrome allows a remote attacker to perform out of bounds memory access via a crafted HTML page.",
-    "affected_systems": ["ACME-WS-042", "ACME-WS-089", "ACME-WS-127"],
+    "affected_systems": [
+      "ACME-WS-042",
+      "ACME-WS-089",
+      "ACME-WS-127"
+    ],
     "published_date": "2024-01-16",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-46604",
@@ -71,10 +114,16 @@
     "cvss_score": 9.8,
     "title": "Apache ActiveMQ Remote Code Execution",
     "description": "Apache ActiveMQ is vulnerable to Remote Code Execution. The vulnerability may allow a remote attacker with network access to a broker to run arbitrary shell commands by manipulating serialized class types.",
-    "affected_systems": ["ACME-MQ-01"],
+    "affected_systems": [
+      "ACME-MQ-01"
+    ],
     "published_date": "2023-10-27",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2021-44228",
@@ -82,10 +131,18 @@
     "cvss_score": 10.0,
     "title": "Apache Log4j2 Remote Code Execution (Log4Shell)",
     "description": "Apache Log4j2 JNDI features used in configuration, log messages, and parameters do not protect against attacker-controlled LDAP and other JNDI related endpoints. An attacker who can control log messages can execute arbitrary code.",
-    "affected_systems": ["ACME-APP-01", "ACME-APP-02"],
+    "affected_systems": [
+      "ACME-APP-01",
+      "ACME-APP-02"
+    ],
     "published_date": "2021-12-10",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "crowdsec",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2024-1086",
@@ -93,10 +150,17 @@
     "cvss_score": 7.8,
     "title": "Linux Kernel Use-After-Free Privilege Escalation",
     "description": "A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.",
-    "affected_systems": ["ACME-WEB-01", "ACME-WEB-02", "DB-PROD-01"],
+    "affected_systems": [
+      "ACME-WEB-01",
+      "ACME-WEB-02",
+      "DB-PROD-01"
+    ],
     "published_date": "2024-01-31",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-22515",
@@ -104,10 +168,16 @@
     "cvss_score": 10.0,
     "title": "Atlassian Confluence Privilege Escalation",
     "description": "Atlassian has been made aware of an issue reported by a handful of customers where external attackers may have exploited a previously unknown vulnerability to create unauthorized Confluence administrator accounts.",
-    "affected_systems": ["CONFLUENCE-01"],
+    "affected_systems": [
+      "CONFLUENCE-01"
+    ],
     "published_date": "2023-10-04",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2024-23897",
@@ -115,10 +185,15 @@
     "cvss_score": 8.0,
     "title": "Jenkins Arbitrary File Read Vulnerability",
     "description": "Jenkins has a built-in command line interface (CLI) to access Jenkins from a script or shell environment. This vulnerability allows attackers to read arbitrary files on the Jenkins controller file system.",
-    "affected_systems": ["JENKINS-01"],
+    "affected_systems": [
+      "JENKINS-01"
+    ],
     "published_date": "2024-01-24",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei"
+    ]
   },
   {
     "cve_id": "CVE-2023-20198",
@@ -126,10 +201,17 @@
     "cvss_score": 10.0,
     "title": "Cisco IOS XE Web UI Privilege Escalation",
     "description": "A vulnerability in the web UI feature of Cisco IOS XE Software could allow an unauthenticated, remote attacker to create an account on an affected system with privilege level 15 access.",
-    "affected_systems": ["CISCO-ROUTER-01", "CISCO-ROUTER-02"],
+    "affected_systems": [
+      "CISCO-ROUTER-01",
+      "CISCO-ROUTER-02"
+    ],
     "published_date": "2023-10-16",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-35078",
@@ -137,10 +219,15 @@
     "cvss_score": 9.8,
     "title": "Ivanti Endpoint Manager Mobile Authentication Bypass",
     "description": "An authentication bypass vulnerability in Ivanti Endpoint Manager Mobile (EPMM) allows unauthorized users to access restricted functionality or resources of the application.",
-    "affected_systems": ["MDM-SERVER-01"],
+    "affected_systems": [
+      "MDM-SERVER-01"
+    ],
     "published_date": "2023-07-25",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei"
+    ]
   },
   {
     "cve_id": "CVE-2024-20253",
@@ -148,10 +235,16 @@
     "cvss_score": 8.6,
     "title": "Cisco Duo Authentication for Windows Logon Bypass",
     "description": "A vulnerability in the Cisco Duo Authentication for Windows Logon and RDP could allow an authenticated, local attacker to bypass secondary authentication and access a Windows system.",
-    "affected_systems": ["DC-PRIMARY", "DC-SECONDARY"],
+    "affected_systems": [
+      "DC-PRIMARY",
+      "DC-SECONDARY"
+    ],
     "published_date": "2024-03-06",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-48788",
@@ -159,10 +252,15 @@
     "cvss_score": 9.8,
     "title": "Fortinet FortiClient EMS SQL Injection",
     "description": "An improper neutralization of special elements used in an SQL Command in Fortinet FortiClient EMS allows an unauthenticated attacker to execute unauthorized code or commands via specifically crafted requests.",
-    "affected_systems": ["FORTICLIENT-EMS-01"],
+    "affected_systems": [
+      "FORTICLIENT-EMS-01"
+    ],
     "published_date": "2024-03-12",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei"
+    ]
   },
   {
     "cve_id": "CVE-2023-27997",
@@ -170,10 +268,16 @@
     "cvss_score": 9.2,
     "title": "Fortinet FortiOS Heap-Based Buffer Overflow",
     "description": "A heap-based buffer overflow vulnerability in FortiOS may allow a remote unauthenticated attacker to execute arbitrary code or commands via specifically crafted requests.",
-    "affected_systems": ["FORTIGATE-01"],
+    "affected_systems": [
+      "FORTIGATE-01"
+    ],
     "published_date": "2023-06-13",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-36884",
@@ -181,10 +285,19 @@
     "cvss_score": 7.8,
     "title": "Microsoft Office Remote Code Execution (zero-day)",
     "description": "Microsoft Office and Windows HTML remote code execution vulnerability. Microsoft is investigating reports of a series of remote code execution vulnerabilities impacting Windows and Office products.",
-    "affected_systems": ["ACME-WS-042", "ACME-WS-089", "ACME-WS-127", "ACME-WS-201"],
+    "affected_systems": [
+      "ACME-WS-042",
+      "ACME-WS-089",
+      "ACME-WS-127",
+      "ACME-WS-201"
+    ],
     "published_date": "2023-07-11",
     "patched": false,
-    "patch_available": false
+    "patch_available": false,
+    "source": [
+      "otx",
+      "crowdsec"
+    ]
   },
   {
     "cve_id": "CVE-2024-21626",
@@ -192,10 +305,17 @@
     "cvss_score": 8.6,
     "title": "Docker runc Container Breakout",
     "description": "runc process.cwd and leaked fds container breakout vulnerability allows a malicious container to gain access to the host filesystem.",
-    "affected_systems": ["DOCKER-HOST-01", "DOCKER-HOST-02", "DOCKER-HOST-03"],
+    "affected_systems": [
+      "DOCKER-HOST-01",
+      "DOCKER-HOST-02",
+      "DOCKER-HOST-03"
+    ],
     "published_date": "2024-01-31",
     "patched": false,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei"
+    ]
   },
   {
     "cve_id": "CVE-2023-38545",
@@ -203,10 +323,17 @@
     "cvss_score": 7.5,
     "title": "curl SOCKS5 Heap Buffer Overflow",
     "description": "This flaw makes a curl library-using application vulnerable to a heap buffer overflow if it enables SOCKS5 proxy support via libcurl.",
-    "affected_systems": ["ACME-WEB-01", "ACME-WEB-02", "ACME-API-01"],
+    "affected_systems": [
+      "ACME-WEB-01",
+      "ACME-WEB-02",
+      "ACME-API-01"
+    ],
     "published_date": "2023-10-11",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "otx"
+    ]
   },
   {
     "cve_id": "CVE-2023-42793",
@@ -214,9 +341,15 @@
     "cvss_score": 9.8,
     "title": "JetBrains TeamCity Authentication Bypass",
     "description": "An authentication bypass vulnerability affecting JetBrains TeamCity On-Premises allows unauthenticated attackers to achieve remote code execution on vulnerable servers.",
-    "affected_systems": ["TEAMCITY-01"],
+    "affected_systems": [
+      "TEAMCITY-01"
+    ],
     "published_date": "2023-09-19",
     "patched": true,
-    "patch_available": true
+    "patch_available": true,
+    "source": [
+      "nuclei",
+      "otx"
+    ]
   }
 ]
