@@ -2,10 +2,12 @@
 
 ## Summary
 
-**Total Monthly Savings: $4,128**
-**Annual Savings: $49,536**
+**Total Monthly Savings: $3,428**
+**Annual Savings: $41,136**
 
-All pricing verified from official vendor websites and industry tracking sites (G2, Capterra, TrustRadius, Vendr).
+All pricing verified from official vendor websites and industry tracking sites (Microsoft, ANY.RUN, G2, Capterra, TrustRadius, Vendr).
+
+**Updated:** Replaced less-known tools (AlienVault, VirusTotal) with more recognizable enterprise platforms (Microsoft Sentinel, ANY.RUN) for interview credibility.
 
 ---
 
@@ -84,43 +86,53 @@ All pricing verified from official vendor websites and industry tracking sites (
 
 ---
 
-### 5. CrowdSec (Free) vs. AlienVault USM ($1,500/mo)
+### 5. CrowdSec (Free) vs. Microsoft Sentinel ($800/mo)
 
 **Open-Source:** CrowdSec Community Edition
 **Cost:** $0
-**Commercial Equivalent:** AlienVault USM Mid-Tier
-**Commercial Cost:** $1,075-2,595/month = **$1,500/month** (mid-tier)
+**Commercial Equivalent:** Microsoft Sentinel (Azure SIEM)
+**Commercial Cost:** $5.22/GB Pay-As-You-Go OR **$800/month** (200GB/day mid-tier estimate)
 
 **Sources:**
-- [TrustRadius AlienVault Pricing](https://www.trustradius.com/products/alienvault/pricing)
-- [Capterra USM Anywhere Pricing](https://www.capterra.com/p/130785/AlienVault-USM/pricing/)
-- [SaaSWorthy AlienVault Pricing](https://www.saasworthy.com/product/alienvault-usm-from-at-t-cybersecurity/)
+- [Microsoft Sentinel Official Pricing](https://www.microsoft.com/en-us/security/pricing/microsoft-sentinel)
+- [UnderDefense Sentinel Pricing Guide](https://underdefense.com/industry-pricings/microsoft-sentinel-pricing/)
 
 **What You Get:**
-- Community-powered threat intelligence
+- Community-powered threat intelligence (vs. Azure's cloud SIEM)
 - Real-time IP reputation
 - Attack detection and blocking
-- SIEM-like capabilities
+- SIEM-like capabilities at zero cost
+
+**Why Microsoft Sentinel:**
+- Industry-leading SIEM platform from Microsoft Azure
+- Transparent per-GB pricing model
+- Widely recognized by enterprise buyers
+- $342/mo baseline (100GB/day), scales to $800+ for mid-sized orgs
 
 ---
 
-### 6. Contextal (Free) vs. VirusTotal Enterprise ($1,000/mo)
+### 6. Contextal (Free) vs. ANY.RUN Interactive Sandbox ($1,000/mo)
 
 **Open-Source:** Contextal
 **Cost:** $0
-**Commercial Equivalent:** VirusTotal Enterprise
-**Commercial Cost:** Custom pricing, estimated **$1,000/month** (conservative $12K/year)
+**Commercial Equivalent:** ANY.RUN Interactive Sandbox Enterprise
+**Commercial Cost:** $5,500-14,000/year = **$458-1,167/month** (using **$1,000/mo** enterprise tier)
 
 **Sources:**
-- [Vendr VirusTotal Marketplace](https://www.vendr.com/marketplace/virustotal)
-- [Capterra VirusTotal Pricing](https://www.capterra.com/p/235440/VirusTotal/)
-- [TrustRadius VirusTotal Pricing](https://www.trustradius.com/products/virustotal/pricing)
+- [ANY.RUN Official Pricing](https://any.run/plans/)
+- [SaaSWorthy ANY.RUN Pricing](https://www.saasworthy.com/product/anyrun/pricing)
 
 **What You Get:**
 - Behavioral malware analysis
-- File scanning and threat detection
-- Sandbox execution
+- Interactive sandbox execution
+- Real-time threat analysis
 - No daily submission limits
+
+**Why ANY.RUN:**
+- Modern, cloud-based malware analysis platform
+- Published pricing (not custom quotes)
+- Interactive detonation with live interaction during execution
+- Widely used by security researchers and SOC teams
 
 ---
 

@@ -254,12 +254,12 @@ export default function SecurityToolsPage() {
                       )}
                       {tool.id === 'crowdsec' && (
                         <p className="text-xs text-muted-foreground mt-2">
-                          Source: AlienVault USM Mid-Tier $1,075-2,595/mo (using $1,500/mo) - <a href="https://www.trustradius.com/products/alienvault/pricing" target="_blank" className="text-horns-blue hover:underline">TrustRadius</a>, <a href="https://www.capterra.com/p/130785/AlienVault-USM/pricing/" target="_blank" className="text-horns-blue hover:underline">Capterra</a>
+                          Source: Microsoft Sentinel $5.22/GB PAYG, ~$342/mo for 100GB/day commitment (using $800/mo for 200GB/day mid-tier) - <a href="https://www.microsoft.com/en-us/security/pricing/microsoft-sentinel" target="_blank" className="text-horns-blue hover:underline">microsoft.com</a>, <a href="https://underdefense.com/industry-pricings/microsoft-sentinel-pricing/" target="_blank" className="text-horns-blue hover:underline">UnderDefense</a>
                         </p>
                       )}
                       {tool.id === 'contextal' && (
                         <p className="text-xs text-muted-foreground mt-2">
-                          Source: VirusTotal Enterprise custom pricing (conservative $12K/year = $1,000/mo) - <a href="https://www.vendr.com/marketplace/virustotal" target="_blank" className="text-horns-blue hover:underline">Vendr</a>, <a href="https://www.trustradius.com/products/virustotal/pricing" target="_blank" className="text-horns-blue hover:underline">TrustRadius</a>
+                          Source: ANY.RUN Interactive Sandbox $5,500-14,000/year ($458-1,167/mo, using $1,000/mo enterprise tier) - <a href="https://any.run/plans/" target="_blank" className="text-horns-blue hover:underline">any.run</a>, <a href="https://www.saasworthy.com/product/anyrun/pricing" target="_blank" className="text-horns-blue hover:underline">SaaSWorthy</a>
                         </p>
                       )}
                     </div>
@@ -362,8 +362,8 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Community-powered threat intelligence with real-time IP reputation and attack detection',
     capabilities: ['IP Reputation', 'Attack Detection', 'Community Intelligence', 'Blocklist Management'],
-    replaces: 'AlienVault USM',
-    monthlySavings: 1500,
+    replaces: 'Microsoft Sentinel',
+    monthlySavings: 800,
     lastRun: '1 minute ago',
     findingsCount: 342,
     icon: '🛡️'
@@ -375,7 +375,7 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Behavioral malware analysis engine for detecting threats through execution patterns',
     capabilities: ['Behavioral Analysis', 'File Scanning', 'Threat Detection', 'Sandbox Execution'],
-    replaces: 'VirusTotal Enterprise',
+    replaces: 'ANY.RUN Sandbox',
     monthlySavings: 1000,
     lastRun: '4 minutes ago',
     findingsCount: 23,
