@@ -24,6 +24,7 @@ export default function SecurityToolsPage() {
   const [tools, setTools] = useState<SecurityTool[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [showPricingModal, setShowPricingModal] = useState(false)
 
   useEffect(() => {
     const fetchTools = async () => {
@@ -71,12 +72,16 @@ export default function SecurityToolsPage() {
           <p className="text-3xl font-bold text-card-foreground">{healthyTools}/{tools.length}</p>
         </div>
 
-        <div className="bg-card rounded-lg p-6 border border-border">
+        <div
+          onClick={() => setShowPricingModal(true)}
+          className="bg-card rounded-lg p-6 border border-border cursor-pointer hover:border-green-500 transition-colors"
+        >
           <div className="flex items-center justify-between mb-2">
             <p className="text-sm text-muted-foreground">Monthly Savings</p>
             <DollarSign className="w-5 h-5 text-green-500" />
           </div>
           <p className="text-3xl font-bold text-card-foreground">${totalSavings.toLocaleString()}</p>
+          <p className="text-xs text-muted-foreground mt-2">Click for pricing breakdown</p>
         </div>
 
         <div className="bg-card rounded-lg p-6 border border-border">
@@ -180,6 +185,101 @@ export default function SecurityToolsPage() {
           ))}
         </div>
       )}
+
+      {/* Pricing Breakdown Modal */}
+      {showPricingModal && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowPricingModal(false)}
+        >
+          <div
+            className="bg-card rounded-lg border border-border max-w-3xl w-full max-h-[80vh] overflow-y-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-card-foreground">Cost Savings Breakdown</h2>
+              <button
+                onClick={() => setShowPricingModal(false)}
+                className="text-muted-foreground hover:text-card-foreground"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                <p className="text-sm text-muted-foreground mb-2">Total Monthly Savings</p>
+                <p className="text-4xl font-bold text-green-400">${totalSavings.toLocaleString()}/month</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  ${(totalSavings * 12).toLocaleString()}/year with open-source tools
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-card-foreground">Tool-by-Tool Comparison</h3>
+
+                {tools.filter(t => t.monthlySavings > 0).map((tool) => (
+                  <div key={tool.id} className="bg-secondary rounded-lg p-4 border border-border">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-2xl">{tool.icon}</span>
+                        <div>
+                          <h4 className="font-semibold text-card-foreground">{tool.name}</h4>
+                          <p className="text-xs text-muted-foreground">Open-Source • Free</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-lg font-bold text-green-400">${tool.monthlySavings}/mo</p>
+                        <p className="text-xs text-muted-foreground">saved</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-border">
+                      <p className="text-sm text-muted-foreground mb-1">
+                        <span className="font-semibold text-card-foreground">Replaces:</span> {tool.replaces}
+                      </p>
+                      {tool.id === 'nuclei' && (
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Source: Tenable Nessus Professional $3,590/year ($299/mo) - <a href="https://www.tenable.com/buy" target="_blank" className="text-horns-blue hover:underline">tenable.com</a>, <a href="https://www.g2.com/products/tenable-nessus/pricing" target="_blank" className="text-horns-blue hover:underline">G2.com</a>
+                        </p>
+                      )}
+                      {tool.id === 'nmap' && (
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Source: Shodan Small Business $299-359/mo - <a href="https://account.shodan.io/billing" target="_blank" className="text-horns-blue hover:underline">shodan.io</a>
+                        </p>
+                      )}
+                      {tool.id === 'subfinder' && (
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Source: SecurityTrails $11K-70K/year (conservative $12K/year = $1,000/mo) - <a href="https://securitytrails.com/corp/pricing" target="_blank" className="text-horns-blue hover:underline">securitytrails.com</a>
+                        </p>
+                      )}
+                      {tool.id === 'crowdsec' && (
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Source: AlienVault USM Mid-Tier $1,075-2,595/mo (using $1,500/mo) - <a href="https://www.trustradius.com/products/alienvault/pricing" target="_blank" className="text-horns-blue hover:underline">TrustRadius</a>, <a href="https://www.capterra.com/p/130785/AlienVault-USM/pricing/" target="_blank" className="text-horns-blue hover:underline">Capterra</a>
+                        </p>
+                      )}
+                      {tool.id === 'contextal' && (
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Source: VirusTotal Enterprise custom pricing (conservative $12K/year = $1,000/mo) - <a href="https://www.vendr.com/marketplace/virustotal" target="_blank" className="text-horns-blue hover:underline">Vendr</a>, <a href="https://www.trustradius.com/products/virustotal/pricing" target="_blank" className="text-horns-blue hover:underline">TrustRadius</a>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-secondary rounded-lg p-4 border border-border">
+                <p className="text-sm font-semibold text-card-foreground mb-2">Note on Pricing</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  All pricing verified from official vendor websites and industry sources (2024-2025).
+                  Conservative estimates used for tools with custom/enterprise pricing. Commercial tools often
+                  require annual contracts and scale exponentially with asset count. Our open-source integrations
+                  provide enterprise-grade capabilities at zero licensing cost.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -201,7 +301,7 @@ function StatusBadge({ status }: { status: string }) {
   )
 }
 
-// Demo data (matches production integrations)
+// Demo data (matches production integrations with verified 2024-2025 pricing)
 const demoToolsData: SecurityTool[] = [
   {
     id: 'nuclei',
@@ -210,7 +310,7 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Fast vulnerability scanner with 11,000+ templates for comprehensive security testing',
     capabilities: ['CVE Detection', 'Misconfigurations', 'Exposed Panels', 'Web Vulnerabilities'],
-    replaces: 'Shodan',
+    replaces: 'Nessus Professional',
     monthlySavings: 299,
     lastRun: '2 minutes ago',
     findingsCount: 127,
@@ -223,8 +323,8 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Network discovery and service detection for comprehensive infrastructure mapping',
     capabilities: ['Port Scanning', 'Service Detection', 'OS Fingerprinting', 'Network Topology'],
-    replaces: 'Commercial Scanner',
-    monthlySavings: 500,
+    replaces: 'Shodan Small Business',
+    monthlySavings: 329,
     lastRun: '5 minutes ago',
     findingsCount: 89,
     icon: '🌐'
@@ -236,8 +336,8 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Fast HTTP toolkit for web server detection and technology fingerprinting',
     capabilities: ['HTTP Probing', 'Tech Stack Detection', 'Web Server Analysis', 'SSL/TLS Info'],
-    replaces: 'Commercial Tool',
-    monthlySavings: 150,
+    replaces: 'Included in ASM tools',
+    monthlySavings: 0,
     lastRun: '3 minutes ago',
     findingsCount: 234,
     icon: '🔗'
@@ -249,8 +349,8 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Passive subdomain discovery using multiple OSINT sources for attack surface mapping',
     capabilities: ['Subdomain Enumeration', 'DNS Discovery', 'Attack Surface Mapping', 'OSINT Aggregation'],
-    replaces: 'OSINT Platform',
-    monthlySavings: 100,
+    replaces: 'SecurityTrails',
+    monthlySavings: 1000,
     lastRun: '10 minutes ago',
     findingsCount: 156,
     icon: '🔎'
@@ -262,8 +362,8 @@ const demoToolsData: SecurityTool[] = [
     status: 'healthy',
     description: 'Community-powered threat intelligence with real-time IP reputation and attack detection',
     capabilities: ['IP Reputation', 'Attack Detection', 'Community Intelligence', 'Blocklist Management'],
-    replaces: 'TI Feed',
-    monthlySavings: 200,
+    replaces: 'AlienVault USM',
+    monthlySavings: 1500,
     lastRun: '1 minute ago',
     findingsCount: 342,
     icon: '🛡️'
@@ -276,7 +376,7 @@ const demoToolsData: SecurityTool[] = [
     description: 'Behavioral malware analysis engine for detecting threats through execution patterns',
     capabilities: ['Behavioral Analysis', 'File Scanning', 'Threat Detection', 'Sandbox Execution'],
     replaces: 'VirusTotal Enterprise',
-    monthlySavings: 60,
+    monthlySavings: 1000,
     lastRun: '4 minutes ago',
     findingsCount: 23,
     icon: '🦠'
