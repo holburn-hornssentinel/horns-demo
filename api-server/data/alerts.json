@@ -8,9 +8,16 @@
     "affected_asset": "ACME-WS-042 (jsmith-laptop)",
     "detected_at": "2026-01-17T08:23:14Z",
     "status": "investigating",
-    "tags": ["malware", "emotet", "c2-communication", "high-priority"],
+    "tags": [
+      "malware",
+      "emotet",
+      "c2-communication",
+      "high-priority"
+    ],
     "ai_confidence": 95,
-    "ai_recommendation": "Isolate endpoint immediately"
+    "ai_recommendation": "Immediate isolation of affected asset recommended",
+    "correlated_findings": 2,
+    "attack_chain_id": "chain-001"
   },
   {
     "id": "ALT-002",
@@ -21,9 +28,15 @@
     "affected_asset": "DC-PRIMARY",
     "detected_at": "2026-01-16T23:45:33Z",
     "status": "open",
-    "tags": ["intrusion", "credential-compromise", "geo-anomaly"],
-    "ai_confidence": 92,
-    "ai_recommendation": "Disable account & rotate credentials"
+    "tags": [
+      "intrusion",
+      "credential-compromise",
+      "geo-anomaly"
+    ],
+    "ai_confidence": 95,
+    "ai_recommendation": "Force password reset and enable MFA for all affected accounts",
+    "correlated_findings": 2,
+    "attack_chain_id": null
   },
   {
     "id": "ALT-003",
@@ -34,7 +47,16 @@
     "affected_asset": "EXCHANGE-01",
     "detected_at": "2026-01-17T14:12:07Z",
     "status": "open",
-    "tags": ["cve-2024-21410", "exchange", "exploitation", "blocked"]
+    "tags": [
+      "cve-2024-21410",
+      "exchange",
+      "exploitation",
+      "blocked"
+    ],
+    "ai_confidence": 88,
+    "ai_recommendation": "Enable enhanced monitoring on affected systems",
+    "correlated_findings": 1,
+    "attack_chain_id": null
   },
   {
     "id": "ALT-004",
@@ -45,7 +67,15 @@
     "affected_asset": "ACME-WS-089 (agarcia-desktop)",
     "detected_at": "2026-01-17T02:34:19Z",
     "status": "investigating",
-    "tags": ["data-exfiltration", "insider-threat", "anomaly"]
+    "tags": [
+      "data-exfiltration",
+      "insider-threat",
+      "anomaly"
+    ],
+    "ai_confidence": 88,
+    "ai_recommendation": "Schedule emergency patching for vulnerable systems",
+    "correlated_findings": 1,
+    "attack_chain_id": null
   },
   {
     "id": "ALT-005",
@@ -56,9 +86,15 @@
     "affected_asset": "FS-PROD-03",
     "detected_at": "2026-01-16T19:22:41Z",
     "status": "investigating",
-    "tags": ["ransomware", "encryption", "critical-infrastructure"],
+    "tags": [
+      "ransomware",
+      "encryption",
+      "critical-infrastructure"
+    ],
     "ai_confidence": 88,
-    "ai_recommendation": "Isolate server & initiate incident response"
+    "ai_recommendation": "Conduct threat hunting for similar patterns",
+    "correlated_findings": 1,
+    "attack_chain_id": null
   },
   {
     "id": "ALT-006",
@@ -69,7 +105,16 @@
     "affected_asset": "ACME-WEB-01",
     "detected_at": "2026-01-17T11:08:52Z",
     "status": "mitigated",
-    "tags": ["brute-force", "ssh", "botnet", "mitigated"]
+    "tags": [
+      "brute-force",
+      "ssh",
+      "botnet",
+      "mitigated"
+    ],
+    "ai_confidence": 88,
+    "ai_recommendation": "Investigate and contain within 24 hours",
+    "correlated_findings": 1,
+    "attack_chain_id": null
   },
   {
     "id": "ALT-007",
@@ -80,7 +125,13 @@
     "affected_asset": "ACME-WS-127 (mchen-laptop)",
     "detected_at": "2026-01-17T09:45:22Z",
     "status": "open",
-    "tags": ["policy-violation", "unauthorized-software", "remote-access"]
+    "tags": [
+      "policy-violation",
+      "unauthorized-software",
+      "remote-access"
+    ],
+    "ai_confidence": 75,
+    "ai_recommendation": "Review security controls and update policies"
   },
   {
     "id": "ALT-008",
@@ -91,7 +142,13 @@
     "affected_asset": "Email System",
     "detected_at": "2026-01-17T07:13:09Z",
     "status": "investigating",
-    "tags": ["phishing", "social-engineering", "email-security"]
+    "tags": [
+      "phishing",
+      "social-engineering",
+      "email-security"
+    ],
+    "ai_confidence": 75,
+    "ai_recommendation": "Monitor for escalation or related activity"
   },
   {
     "id": "ALT-009",
@@ -102,7 +159,13 @@
     "affected_asset": "AWS S3: acme-prod-backups",
     "detected_at": "2026-01-16T16:30:44Z",
     "status": "open",
-    "tags": ["cloud-security", "misconfiguration", "data-exposure"]
+    "tags": [
+      "cloud-security",
+      "misconfiguration",
+      "data-exposure"
+    ],
+    "ai_confidence": 75,
+    "ai_recommendation": "Schedule patching during next maintenance window"
   },
   {
     "id": "ALT-010",
@@ -113,7 +176,13 @@
     "affected_asset": "DB-PROD-01",
     "detected_at": "2026-01-17T03:47:11Z",
     "status": "investigating",
-    "tags": ["anomaly", "database", "after-hours"]
+    "tags": [
+      "anomaly",
+      "database",
+      "after-hours"
+    ],
+    "ai_confidence": 75,
+    "ai_recommendation": "Update detection rules based on findings"
   },
   {
     "id": "ALT-011",
@@ -124,7 +193,13 @@
     "affected_asset": "ACME-PCI-01",
     "detected_at": "2026-01-17T00:00:00Z",
     "status": "open",
-    "tags": ["compliance", "pci-dss", "patching"]
+    "tags": [
+      "compliance",
+      "pci-dss",
+      "patching"
+    ],
+    "ai_confidence": 75,
+    "ai_recommendation": "Investigate within 72 hours and document findings"
   },
   {
     "id": "ALT-012",
@@ -135,7 +210,13 @@
     "affected_asset": "FIREWALL-01",
     "detected_at": "2026-01-17T13:22:18Z",
     "status": "closed",
-    "tags": ["reconnaissance", "port-scan", "informational"]
+    "tags": [
+      "reconnaissance",
+      "port-scan",
+      "informational"
+    ],
+    "ai_confidence": 60,
+    "ai_recommendation": "Review during next security assessment"
   },
   {
     "id": "ALT-013",
@@ -146,7 +227,13 @@
     "affected_asset": "api.acme.com",
     "detected_at": "2026-01-17T00:00:00Z",
     "status": "open",
-    "tags": ["certificate", "ssl", "maintenance"]
+    "tags": [
+      "certificate",
+      "ssl",
+      "maintenance"
+    ],
+    "ai_confidence": 60,
+    "ai_recommendation": "Consider security awareness training"
   },
   {
     "id": "ALT-014",
@@ -157,7 +244,13 @@
     "affected_asset": "ACME-WS-201",
     "detected_at": "2026-01-17T06:00:00Z",
     "status": "open",
-    "tags": ["antivirus", "endpoint-health", "updates"]
+    "tags": [
+      "antivirus",
+      "endpoint-health",
+      "updates"
+    ],
+    "ai_confidence": 60,
+    "ai_recommendation": "Update baseline security configurations"
   },
   {
     "id": "ALT-015",
@@ -168,6 +261,12 @@
     "affected_asset": "ACME-AD-01",
     "detected_at": "2026-01-16T14:45:00Z",
     "status": "closed",
-    "tags": ["authentication", "password-reset", "resolved"]
+    "tags": [
+      "authentication",
+      "password-reset",
+      "resolved"
+    ],
+    "ai_confidence": 60,
+    "ai_recommendation": "Monitor for pattern changes"
   }
 ]

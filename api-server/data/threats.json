@@ -16,7 +16,13 @@
     "source": [
       "crowdsec",
       "abuseipdb"
-    ]
+    ],
+    "risk_score": 100,
+    "source_scores": {
+      "crowdsec": 45,
+      "abuseipdb": 40
+    },
+    "ai_recommendation": "AUTO-BLOCK: High-confidence malicious indicator. Immediate blocking recommended."
   },
   {
     "id": "IOC-002",
@@ -34,7 +40,13 @@
     "source": [
       "urlhaus",
       "otx"
-    ]
+    ],
+    "risk_score": 92,
+    "source_scores": {
+      "otx": 35,
+      "urlhaus": 42
+    },
+    "ai_recommendation": "AUTO-BLOCK: High-confidence malicious indicator. Immediate blocking recommended."
   },
   {
     "id": "IOC-003",
@@ -51,7 +63,12 @@
     ],
     "source": [
       "otx"
-    ]
+    ],
+    "risk_score": 35,
+    "source_scores": {
+      "otx": 35
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-004",
@@ -69,7 +86,13 @@
     "source": [
       "crowdsec",
       "abuseipdb"
-    ]
+    ],
+    "risk_score": 100,
+    "source_scores": {
+      "crowdsec": 45,
+      "abuseipdb": 40
+    },
+    "ai_recommendation": "AUTO-BLOCK: High-confidence malicious indicator. Immediate blocking recommended."
   },
   {
     "id": "IOC-005",
@@ -86,7 +109,12 @@
     ],
     "source": [
       "urlhaus"
-    ]
+    ],
+    "risk_score": 42,
+    "source_scores": {
+      "urlhaus": 42
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-006",
@@ -104,7 +132,12 @@
     ],
     "source": [
       "otx"
-    ]
+    ],
+    "risk_score": 35,
+    "source_scores": {
+      "otx": 35
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-007",
@@ -121,7 +154,12 @@
     ],
     "source": [
       "crowdsec"
-    ]
+    ],
+    "risk_score": 45,
+    "source_scores": {
+      "crowdsec": 45
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-008",
@@ -139,7 +177,13 @@
     "source": [
       "urlhaus",
       "otx"
-    ]
+    ],
+    "risk_score": 92,
+    "source_scores": {
+      "otx": 35,
+      "urlhaus": 42
+    },
+    "ai_recommendation": "AUTO-BLOCK: High-confidence malicious indicator. Immediate blocking recommended."
   },
   {
     "id": "IOC-009",
@@ -156,7 +200,12 @@
     ],
     "source": [
       "otx"
-    ]
+    ],
+    "risk_score": 35,
+    "source_scores": {
+      "otx": 35
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-010",
@@ -174,7 +223,13 @@
     "source": [
       "abuseipdb",
       "crowdsec"
-    ]
+    ],
+    "risk_score": 100,
+    "source_scores": {
+      "crowdsec": 45,
+      "abuseipdb": 40
+    },
+    "ai_recommendation": "AUTO-BLOCK: High-confidence malicious indicator. Immediate blocking recommended."
   },
   {
     "id": "IOC-011",
@@ -191,7 +246,12 @@
     ],
     "source": [
       "urlhaus"
-    ]
+    ],
+    "risk_score": 42,
+    "source_scores": {
+      "urlhaus": 42
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   },
   {
     "id": "IOC-012",
@@ -208,6 +268,11 @@
     ],
     "source": [
       "otx"
-    ]
+    ],
+    "risk_score": 35,
+    "source_scores": {
+      "otx": 35
+    },
+    "ai_recommendation": "MONITOR: Single-source detection. Continue monitoring for additional evidence."
   }
 ]

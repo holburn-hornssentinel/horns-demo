@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import MetricCard from '@/components/MetricCard'
 import SeverityBadge from '@/components/SeverityBadge'
 import AIBadge from '@/components/AIBadge'
+import AttackChainVisualization from '@/components/AttackChainVisualization'
 import { useToast } from '@/components/Toast'
 import {
   Shield,
@@ -223,6 +224,11 @@ export default function Dashboard() {
             <p className="text-sm text-muted-foreground mt-1">Low</p>
           </div>
         </div>
+      </div>
+
+      {/* Attack Chain Correlation */}
+      <div className="bg-card rounded-lg p-6 border border-border">
+        <AttackChainVisualization />
       </div>
 
       {/* Recent Alerts */}

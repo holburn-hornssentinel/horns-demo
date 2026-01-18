@@ -15,7 +15,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-21410",
+    "matched_at": "EXCHANGE-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.87,
+    "epss_percentile": 87
   },
   {
     "cve_id": "CVE-2024-3400",
@@ -34,7 +42,15 @@
       "nuclei",
       "crowdsec",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-3400",
+    "matched_at": "FIREWALL-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.82,
+    "epss_percentile": 82
   },
   {
     "cve_id": "CVE-2023-44487",
@@ -53,7 +69,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-44487",
+    "matched_at": "ACME-WEB-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.71,
+    "epss_percentile": 71
   },
   {
     "cve_id": "CVE-2024-21887",
@@ -69,7 +93,15 @@
     "patch_available": true,
     "source": [
       "nuclei"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-21887",
+    "matched_at": "VPN-GATEWAY-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.91,
+    "epss_percentile": 91
   },
   {
     "cve_id": "CVE-2023-4863",
@@ -88,7 +120,15 @@
     "patch_available": true,
     "source": [
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-4863",
+    "matched_at": "ACME-WS-001",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.69,
+    "epss_percentile": 69
   },
   {
     "cve_id": "CVE-2024-0519",
@@ -106,7 +146,15 @@
     "patch_available": true,
     "source": [
       "otx"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-0519",
+    "matched_at": "ACME-WS-042",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.7,
+    "epss_percentile": 70
   },
   {
     "cve_id": "CVE-2023-46604",
@@ -123,7 +171,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-46604",
+    "matched_at": "ACME-MQ-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.76,
+    "epss_percentile": 76
   },
   {
     "cve_id": "CVE-2021-44228",
@@ -142,7 +198,15 @@
       "nuclei",
       "crowdsec",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2021/CVE-2021-44228",
+    "matched_at": "ACME-APP-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.76,
+    "epss_percentile": 76
   },
   {
     "cve_id": "CVE-2024-1086",
@@ -160,7 +224,15 @@
     "patch_available": true,
     "source": [
       "otx"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-1086",
+    "matched_at": "ACME-WEB-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.62,
+    "epss_percentile": 62
   },
   {
     "cve_id": "CVE-2023-22515",
@@ -177,7 +249,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-22515",
+    "matched_at": "CONFLUENCE-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.86,
+    "epss_percentile": 86
   },
   {
     "cve_id": "CVE-2024-23897",
@@ -193,7 +273,15 @@
     "patch_available": true,
     "source": [
       "nuclei"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-23897",
+    "matched_at": "JENKINS-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.67,
+    "epss_percentile": 67
   },
   {
     "cve_id": "CVE-2023-20198",
@@ -211,7 +299,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-20198",
+    "matched_at": "CISCO-ROUTER-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.93,
+    "epss_percentile": 93
   },
   {
     "cve_id": "CVE-2023-35078",
@@ -227,7 +323,15 @@
     "patch_available": true,
     "source": [
       "nuclei"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-35078",
+    "matched_at": "MDM-SERVER-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.85,
+    "epss_percentile": 85
   },
   {
     "cve_id": "CVE-2024-20253",
@@ -244,7 +348,15 @@
     "patch_available": true,
     "source": [
       "otx"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-20253",
+    "matched_at": "DC-PRIMARY",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.51,
+    "epss_percentile": 51
   },
   {
     "cve_id": "CVE-2023-48788",
@@ -260,7 +372,15 @@
     "patch_available": true,
     "source": [
       "nuclei"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-48788",
+    "matched_at": "FORTICLIENT-EMS-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.75,
+    "epss_percentile": 75
   },
   {
     "cve_id": "CVE-2023-27997",
@@ -277,7 +397,15 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-27997",
+    "matched_at": "FORTIGATE-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.95,
+    "epss_percentile": 95
   },
   {
     "cve_id": "CVE-2023-36884",
@@ -297,7 +425,15 @@
     "source": [
       "otx",
       "crowdsec"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-36884",
+    "matched_at": "ACME-WS-042",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.68,
+    "epss_percentile": 68
   },
   {
     "cve_id": "CVE-2024-21626",
@@ -315,7 +451,15 @@
     "patch_available": true,
     "source": [
       "nuclei"
-    ]
+    ],
+    "template_id": "cve/2024/CVE-2024-21626",
+    "matched_at": "DOCKER-HOST-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.52,
+    "epss_percentile": 52
   },
   {
     "cve_id": "CVE-2023-38545",
@@ -333,7 +477,15 @@
     "patch_available": true,
     "source": [
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-38545",
+    "matched_at": "ACME-WEB-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "response"
+    },
+    "epss_score": 0.72,
+    "epss_percentile": 72
   },
   {
     "cve_id": "CVE-2023-42793",
@@ -350,6 +502,14 @@
     "source": [
       "nuclei",
       "otx"
-    ]
+    ],
+    "template_id": "cve/2023/CVE-2023-42793",
+    "matched_at": "TEAMCITY-01",
+    "detection_metadata": {
+      "matcher_name": "vulnerability-scan",
+      "extraction_type": "regex"
+    },
+    "epss_score": 0.89,
+    "epss_percentile": 89
   }
 ]
