@@ -27,17 +27,13 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
-# Check if onyx_onyx_net exists (optional, for HornsIQ)
-if ! docker network ls | grep -q onyx_onyx_net; then
-    echo "⚠️  Warning: onyx_onyx_net network not found."
-    echo "   HornsIQ will not be able to connect to Onyx."
-    echo "   This is OK for dashboard-only demos."
-    echo ""
-fi
+# Onyx connection info
+echo "📡 HornsIQ will connect to Onyx at: ${ONYX_API_URL:-http://192.168.1.160:8080}"
+echo ""
 
 # Start services
 echo "📦 Building and starting services..."
-docker-compose up -d --build
+docker compose up -d --build
 
 # Wait for services to be ready
 echo ""
@@ -49,24 +45,24 @@ echo ""
 echo "🔍 Checking service health..."
 
 # Check API
-if curl -s http://localhost:8000/health > /dev/null 2>&1; then
-    echo "✅ API Server:  http://localhost:8000 (healthy)"
+if curl -s http://localhost:8001/health > /dev/null 2>&1; then
+    echo "✅ API Server:  http://localhost:8001 (healthy)"
 else
-    echo "❌ API Server:  http://localhost:8000 (not responding)"
+    echo "❌ API Server:  http://localhost:8001 (not responding)"
 fi
 
 # Check Dashboard
-if curl -s http://localhost:3000 > /dev/null 2>&1; then
-    echo "✅ Dashboard:   http://localhost:3000 (healthy)"
+if curl -s http://localhost:3002 > /dev/null 2>&1; then
+    echo "✅ Dashboard:   http://localhost:3002 (healthy)"
 else
-    echo "⏳ Dashboard:   http://localhost:3000 (starting...)"
+    echo "⏳ Dashboard:   http://localhost:3002 (starting...)"
 fi
 
 # Check HornsIQ
-if curl -s http://localhost:3978/health > /dev/null 2>&1; then
-    echo "✅ HornsIQ:     http://localhost:3978 (healthy)"
+if curl -s http://localhost:3979/health > /dev/null 2>&1; then
+    echo "✅ HornsIQ:     http://localhost:3979 (healthy)"
 else
-    echo "❌ HornsIQ:     http://localhost:3978 (not responding)"
+    echo "❌ HornsIQ:     http://localhost:3979 (not responding)"
 fi
 
 echo ""
@@ -74,12 +70,12 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "🎉 Horns Sentinel Demo is ready!"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-echo "📊 Dashboard:  http://localhost:3000"
-echo "🤖 HornsIQ:    http://localhost:3978"
-echo "🔌 API:        http://localhost:8000"
-echo "📚 API Docs:   http://localhost:8000/docs"
+echo "📊 Dashboard:  http://localhost:3002"
+echo "🤖 HornsIQ:    http://localhost:3979"
+echo "🔌 API:        http://localhost:8001"
+echo "📚 API Docs:   http://localhost:8001/docs"
 echo ""
-echo "📝 View logs:  docker-compose logs -f"
+echo "📝 View logs:  docker compose logs -f"
 echo "🛑 Stop demo:  ./scripts/stop.sh"
 echo ""
 echo "💡 Demo Scenario: Acme Corporation (Security Score: 72/100)"

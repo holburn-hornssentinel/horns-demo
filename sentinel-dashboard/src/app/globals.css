@@ -1,50 +1,63 @@
+/* Updated: Colorblind-accessible colors - v2 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: #0a0a0f;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  :root {
+    /* Colorblind-accessible dark theme with distinct blue-tinted grays */
+    --background: 222 47% 5%; /* #0A0E17 - Very dark blue-gray (distinct base) */
+    --foreground: 220 13% 91%; /* #E5E7EB - Near white text (high contrast) */
+    --card: 222 47% 11%; /* #151B2E - Noticeably lighter than background */
+    --card-foreground: 220 13% 91%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 220 13% 91%;
+    --primary: 346 77% 57%; /* #e94560 - Horns pink (brand color) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 19% 27%; /* #3A4556 - Clear mid-tone for interactive elements */
+    --secondary-foreground: 220 13% 91%;
+    --muted: 215 16% 47%; /* #6B7280 - Visible muted state */
+    --muted-foreground: 220 9% 61%; /* #9CA3AF - Readable muted text */
+    --accent: 217 33% 17%; /* #1F2937 - Distinct accent background */
+    --accent-foreground: 220 13% 91%;
+    --destructive: 0 84% 60%; /* #EF4444 - Clear red for warnings */
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 25% 27%; /* #354252 - Clearly visible borders */
+    --input: 215 25% 27%;
+    --ring: 346 77% 57%;
+    --radius: 0.5rem;
   }
 }
 
-/* Scrollbar styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a24;
+  background: #0A0E17;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 4px;
+  background: #354252;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #e94560;
 }

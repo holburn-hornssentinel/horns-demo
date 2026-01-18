@@ -8,7 +8,9 @@
     "affected_asset": "ACME-WS-042 (jsmith-laptop)",
     "detected_at": "2026-01-17T08:23:14Z",
     "status": "investigating",
-    "tags": ["malware", "emotet", "c2-communication", "high-priority"]
+    "tags": ["malware", "emotet", "c2-communication", "high-priority"],
+    "ai_confidence": 95,
+    "ai_recommendation": "Isolate endpoint immediately"
   },
   {
     "id": "ALT-002",
@@ -19,7 +21,9 @@
     "affected_asset": "DC-PRIMARY",
     "detected_at": "2026-01-16T23:45:33Z",
     "status": "open",
-    "tags": ["intrusion", "credential-compromise", "geo-anomaly"]
+    "tags": ["intrusion", "credential-compromise", "geo-anomaly"],
+    "ai_confidence": 92,
+    "ai_recommendation": "Disable account & rotate credentials"
   },
   {
     "id": "ALT-003",
@@ -52,7 +56,9 @@
     "affected_asset": "FS-PROD-03",
     "detected_at": "2026-01-16T19:22:41Z",
     "status": "investigating",
-    "tags": ["ransomware", "encryption", "critical-infrastructure"]
+    "tags": ["ransomware", "encryption", "critical-infrastructure"],
+    "ai_confidence": 88,
+    "ai_recommendation": "Isolate server & initiate incident response"
   },
   {
     "id": "ALT-006",

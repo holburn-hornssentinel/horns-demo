@@ -15,15 +15,15 @@ echo ""
 
 # Stop services
 echo "🛑 Stopping services..."
-docker-compose down
+docker compose down
 
 # Remove volumes
 echo "🗑️  Removing volumes..."
-docker-compose down -v
+docker compose down -v
 
 # Clean build cache
 echo "🧹 Cleaning build cache..."
-docker-compose build --no-cache
+docker compose build --no-cache
 
 echo ""
 echo "✅ Demo reset complete!"

@@ -8,7 +8,9 @@ import {
   Shield,
   Eye,
   Activity,
-  Server
+  Server,
+  MessageSquare,
+  TrendingUp
 } from 'lucide-react'
 
 const navigation = [
@@ -16,20 +18,22 @@ const navigation = [
   { name: 'Alerts', href: '/alerts', icon: AlertTriangle },
   { name: 'Threat Intel', href: '/threats', icon: Shield },
   { name: 'OSINT', href: '/osint', icon: Eye },
+  { name: 'Sentiment AI', href: '/sentiment', icon: TrendingUp },
   { name: 'Agents', href: '/agents', icon: Server },
+  { name: 'HornsIQ Chat', href: '/chat', icon: MessageSquare },
 ]
 
 export default function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-64 bg-horns-darker border-r border-horns-gray">
+    <div className="fixed left-0 top-0 h-screen w-64 bg-card border-r border-border">
       <div className="p-6">
         <div className="flex items-center space-x-3">
-          <Activity className="w-8 h-8 text-horns-blue" />
+          <Activity className="w-8 h-8 text-primary" />
           <div>
-            <h1 className="text-xl font-bold text-white">Horns Sentinel</h1>
-            <p className="text-xs text-gray-400">Security Operations</p>
+            <h1 className="text-xl font-bold text-card-foreground">Horns <span className="text-primary">Sentinel</span></h1>
+            <p className="text-xs text-muted-foreground">Security Operations</p>
           </div>
         </div>
       </div>
@@ -44,10 +48,10 @@ export default function Sidebar() {
               key={item.name}
               href={item.href}
               className={`
-                flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors
+                flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors relative
                 ${isActive
-                  ? 'bg-horns-blue text-white'
-                  : 'text-gray-400 hover:bg-horns-gray hover:text-white'
+                  ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                  : 'text-muted-foreground hover:bg-secondary hover:text-card-foreground border-l-4 border-transparent'
                 }
               `}
             >
@@ -58,14 +62,14 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-horns-gray">
-        <div className="bg-horns-gray rounded-lg p-4">
+      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border">
+        <div className="bg-secondary rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-400">Security Score</span>
-            <span className="text-lg font-bold text-horns-yellow">72/100</span>
+            <span className="text-sm text-muted-foreground">Security Score</span>
+            <span className="text-lg font-bold text-primary">72/100</span>
           </div>
-          <div className="w-full bg-horns-dark rounded-full h-2">
-            <div className="bg-horns-yellow h-2 rounded-full" style={{ width: '72%' }}></div>
+          <div className="w-full bg-muted rounded-full h-2">
+            <div className="bg-primary h-2 rounded-full" style={{ width: '72%' }}></div>
           </div>
         </div>
       </div>

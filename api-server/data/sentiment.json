@@ -1,0 +1,243 @@
+{
+  "sentiment_stats": {
+    "total_mentions": 2847,
+    "positive": 1936,
+    "neutral": 683,
+    "negative": 228,
+    "positive_pct": 68,
+    "neutral_pct": 24,
+    "negative_pct": 8
+  },
+  "platform_breakdown": [
+    {
+      "platform": "twitter",
+      "name": "Twitter/X",
+      "mentions": 1234,
+      "sentiment_avg": 72
+    },
+    {
+      "platform": "reddit",
+      "name": "Reddit",
+      "mentions": 567,
+      "sentiment_avg": 65
+    },
+    {
+      "platform": "news",
+      "name": "News Sites",
+      "mentions": 423,
+      "sentiment_avg": 70
+    },
+    {
+      "platform": "reviews",
+      "name": "Reviews",
+      "mentions": 623,
+      "sentiment_avg": 78
+    }
+  ],
+  "mentions": [
+    {
+      "id": "mention-001",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "Sarah Chen",
+      "handle": "@sarahchen_tech",
+      "sentiment": "positive",
+      "sentiment_score": 85,
+      "content": "Just tried <span class=\"highlight\">Horns Sentinel</span> for our security team. The AI-powered threat detection is impressive! Finally, OSINT that doesn't require a PhD to use. 🔒✨",
+      "time": "2 hours ago",
+      "engagement": "342 likes • 45 retweets",
+      "url": "https://twitter.com/sarahchen_tech/status/..."
+    },
+    {
+      "id": "mention-002",
+      "platform": "reddit",
+      "platform_icon": "R",
+      "name": "TechReviews",
+      "handle": "u/TechReviews",
+      "sentiment": "neutral",
+      "sentiment_score": 50,
+      "content": "<span class=\"highlight\">Acme Corporation</span> announced new product features in their latest security platform update. Mixed reactions from enterprise customers.",
+      "time": "1 day ago",
+      "engagement": "89 upvotes • 23 comments",
+      "url": "https://reddit.com/r/cybersecurity/comments/..."
+    },
+    {
+      "id": "mention-003",
+      "platform": "news",
+      "platform_icon": "N",
+      "name": "TechCrunch",
+      "handle": "TechCrunch",
+      "sentiment": "positive",
+      "sentiment_score": 78,
+      "content": "<span class=\"highlight\">Acme Corporation</span> raises $15M Series A for AI-powered security monitoring platform. Investors bet on SMB market disruption.",
+      "time": "3 days ago",
+      "engagement": "1.2K views",
+      "url": "https://techcrunch.com/2025/01/14/acme-corp-raises-15m"
+    },
+    {
+      "id": "mention-004",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "InfoSec Mike",
+      "handle": "@infosec_mike",
+      "sentiment": "negative",
+      "sentiment_score": 25,
+      "content": "Frustrated with <span class=\"highlight\">Acme Corporation</span> product outage yesterday. Our monitoring was down for 3 hours during a critical incident. Not acceptable for security tools. 😤",
+      "time": "5 days ago",
+      "engagement": "156 likes • 67 retweets",
+      "url": "https://twitter.com/infosec_mike/status/..."
+    },
+    {
+      "id": "mention-005",
+      "platform": "reviews",
+      "platform_icon": "★",
+      "name": "Emily Rodriguez",
+      "handle": "G2 Review",
+      "sentiment": "positive",
+      "sentiment_score": 90,
+      "content": "Game-changer for our security team. <span class=\"highlight\">Acme</span>'s OSINT platform found exposed credentials we had no idea about. ROI in the first month. Highly recommend! ⭐⭐⭐⭐⭐",
+      "time": "1 week ago",
+      "engagement": "14 helpful votes",
+      "url": "https://g2.com/products/acme-sentinel/reviews"
+    },
+    {
+      "id": "mention-006",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "Alex Martinez",
+      "handle": "@alexmsec",
+      "sentiment": "positive",
+      "sentiment_score": 82,
+      "content": "Deployed <span class=\"highlight\">Horns Sentinel</span> across our infrastructure. Dark web monitoring caught credential leaks before they were exploited. Solid product. 👍",
+      "time": "3 hours ago",
+      "engagement": "89 likes • 12 retweets",
+      "url": "https://twitter.com/alexmsec/status/..."
+    },
+    {
+      "id": "mention-007",
+      "platform": "reddit",
+      "platform_icon": "R",
+      "name": "SecOpsDaily",
+      "handle": "u/SecOpsDaily",
+      "sentiment": "positive",
+      "sentiment_score": 75,
+      "content": "Comparison: <span class=\"highlight\">Acme Corporation</span> vs competitors. Their AI threat detection is genuinely good, not just marketing. Worth the premium pricing.",
+      "time": "2 days ago",
+      "engagement": "234 upvotes • 67 comments",
+      "url": "https://reddit.com/r/netsec/comments/..."
+    },
+    {
+      "id": "mention-008",
+      "platform": "news",
+      "platform_icon": "N",
+      "name": "Dark Reading",
+      "handle": "Dark Reading",
+      "sentiment": "neutral",
+      "sentiment_score": 55,
+      "content": "<span class=\"highlight\">Acme Corporation</span> adds new OSINT capabilities. Early reviews are mixed, some features still in beta.",
+      "time": "4 days ago",
+      "engagement": "892 views",
+      "url": "https://darkreading.com/..."
+    },
+    {
+      "id": "mention-009",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "Jessica Park",
+      "handle": "@jpark_security",
+      "sentiment": "negative",
+      "sentiment_score": 30,
+      "content": "Support response from <span class=\"highlight\">Acme</span> was disappointing. Took 48 hours to get basic help during an incident. Expected better for enterprise tier.",
+      "time": "6 days ago",
+      "engagement": "67 likes • 23 retweets",
+      "url": "https://twitter.com/jpark_security/status/..."
+    },
+    {
+      "id": "mention-010",
+      "platform": "reviews",
+      "platform_icon": "★",
+      "name": "David Kim",
+      "handle": "Gartner Peer Insights",
+      "sentiment": "positive",
+      "sentiment_score": 88,
+      "content": "Best-in-class OSINT for SMB. <span class=\"highlight\">Acme</span> makes threat intelligence accessible without a massive security team. Easy integration. ⭐⭐⭐⭐⭐",
+      "time": "1 week ago",
+      "engagement": "28 helpful votes",
+      "url": "https://gartner.com/reviews/..."
+    },
+    {
+      "id": "mention-011",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "Chris Thompson",
+      "handle": "@cthompson_ciso",
+      "sentiment": "positive",
+      "sentiment_score": 80,
+      "content": "Presented <span class=\"highlight\">Horns Sentinel</span> to the board today. They loved the real-time dark web monitoring dashboard. Finally, security metrics execs understand.",
+      "time": "1 day ago",
+      "engagement": "203 likes • 34 retweets",
+      "url": "https://twitter.com/cthompson_ciso/status/..."
+    },
+    {
+      "id": "mention-012",
+      "platform": "reddit",
+      "platform_icon": "R",
+      "name": "EnterpriseSec",
+      "handle": "u/EnterpriseSec",
+      "sentiment": "neutral",
+      "sentiment_score": 60,
+      "content": "Anyone using <span class=\"highlight\">Acme Corporation</span> for vulnerability management? Pros/cons vs traditional tools?",
+      "time": "3 days ago",
+      "engagement": "145 upvotes • 89 comments",
+      "url": "https://reddit.com/r/cybersecurity/comments/..."
+    },
+    {
+      "id": "mention-013",
+      "platform": "news",
+      "platform_icon": "N",
+      "name": "SecurityWeek",
+      "handle": "SecurityWeek",
+      "sentiment": "positive",
+      "sentiment_score": 72,
+      "content": "<span class=\"highlight\">Acme Corporation</span> announces partnership with major cloud providers. Expanded integrations coming Q2 2026.",
+      "time": "2 days ago",
+      "engagement": "1.5K views",
+      "url": "https://securityweek.com/..."
+    },
+    {
+      "id": "mention-014",
+      "platform": "twitter",
+      "platform_icon": "X",
+      "name": "Rachel Green",
+      "handle": "@rgreen_infosec",
+      "sentiment": "negative",
+      "sentiment_score": 20,
+      "content": "False positive rate on <span class=\"highlight\">Acme</span> threat detection is frustrating. Spent half the day chasing ghosts. Needs tuning.",
+      "time": "4 days ago",
+      "engagement": "91 likes • 45 retweets",
+      "url": "https://twitter.com/rgreen_infosec/status/..."
+    },
+    {
+      "id": "mention-015",
+      "platform": "reviews",
+      "platform_icon": "★",
+      "name": "Michael Scott",
+      "handle": "Capterra Review",
+      "sentiment": "positive",
+      "sentiment_score": 85,
+      "content": "Switched from Splunk to <span class=\"highlight\">Acme</span>. Better UX, better AI, 40% cost savings. Team is much happier. ⭐⭐⭐⭐",
+      "time": "2 weeks ago",
+      "engagement": "19 helpful votes",
+      "url": "https://capterra.com/reviews/..."
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-001",
+      "type": "negative_spike",
+      "severity": "medium",
+      "message": "Negative sentiment spike detected: 23% increase in negative mentions related to 'product outage' and 'support response'",
+      "timestamp": "2025-01-15T14:23:00Z"
+    }
+  ]
+}

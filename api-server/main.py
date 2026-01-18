@@ -25,6 +25,8 @@ class Alert(BaseModel):
     detected_at: str
     status: str
     tags: Optional[List[str]] = []
+    ai_confidence: Optional[int] = None
+    ai_recommendation: Optional[str] = None
 
 
 class Vulnerability(BaseModel):
@@ -281,6 +283,105 @@ async def get_agent_detail(agent_id: str):
             return agent
 
     raise HTTPException(status_code=404, detail=f"Agent {agent_id} not found")
+
+
+@app.get("/api/sentiment/mentions")
+async def get_sentiment_mentions():
+    """Get brand sentiment mentions and analytics."""
+    data = load_json_data("sentiment.json")
+    return data
+
+
+# Action Endpoints (for demo - these would modify state in production)
+
+@app.post("/api/alerts/{alert_id}/acknowledge")
+async def acknowledge_alert(alert_id: str):
+    """Acknowledge an alert (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "acknowledge",
+        "alert_id": alert_id,
+        "message": f"Alert {alert_id} acknowledged"
+    }
+
+
+@app.post("/api/alerts/{alert_id}/resolve")
+async def resolve_alert(alert_id: str):
+    """Resolve an alert (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "resolve",
+        "alert_id": alert_id,
+        "message": f"Alert {alert_id} marked as resolved"
+    }
+
+
+@app.post("/api/alerts/{alert_id}/escalate")
+async def escalate_alert(alert_id: str):
+    """Escalate an alert (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "escalate",
+        "alert_id": alert_id,
+        "message": f"Alert {alert_id} escalated to security team"
+    }
+
+
+@app.post("/api/threats/ioc/{ioc_id}/block")
+async def block_ioc(ioc_id: str):
+    """Block a threat IOC (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "block",
+        "ioc_id": ioc_id,
+        "message": f"IOC {ioc_id} added to blocklist. Agents will receive update in ~60 seconds."
+    }
+
+
+@app.post("/api/vulnerabilities/{cve_id}/patch")
+async def mark_patched(cve_id: str):
+    """Mark vulnerability as patched (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "mark_patched",
+        "cve_id": cve_id,
+        "message": f"Vulnerability {cve_id} marked as patched"
+    }
+
+
+@app.post("/api/osint/findings/{finding_id}/save")
+async def save_osint_finding(finding_id: str):
+    """Save OSINT finding (demo only - doesn't persist)."""
+    return {
+        "status": "success",
+        "action": "save",
+        "finding_id": finding_id,
+        "message": "Finding saved to investigation workspace"
+    }
+
+
+@app.post("/api/osint/export")
+async def export_osint(format: str = "csv"):
+    """Export OSINT findings (demo only - returns mock download)."""
+    return {
+        "status": "success",
+        "action": "export",
+        "format": format,
+        "download_url": f"/downloads/osint-report-{datetime.utcnow().strftime('%Y%m%d')}.{format}",
+        "message": f"Report exported as {format.upper()}"
+    }
+
+
+@app.post("/api/agents/{agent_id}/restart")
+async def restart_agent(agent_id: str):
+    """Restart an agent (demo only - doesn't actually restart)."""
+    return {
+        "status": "success",
+        "action": "restart",
+        "agent_id": agent_id,
+        "message": f"Agent {agent_id} restart initiated. ETA: 30 seconds.",
+        "eta_seconds": 30
+    }
 
 
 if __name__ == "__main__":
