@@ -16,6 +16,7 @@ interface Message {
 }
 
 export default function ChatPage() {
+  const [mode, setMode] = useState<'production' | 'demo'>('production')
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -47,9 +48,18 @@ export default function ChatPage() {
     }
 
     setMessages(prev => [...prev, userMessage])
-    const messageText = input.trim()
+    let messageText = input.trim()
     setInput('')
     setIsLoading(true)
+
+    // Apply demo mode filter if enabled
+    if (mode === 'demo') {
+      messageText = `[IMPORTANT: Answer using ONLY these documents from the demo environment: current-security-alerts.md, current-vulnerabilities.md, horns-sentinel-demo-overview.md]
+
+Question about the Acme Corporation demo environment: ${messageText}
+
+If the answer is not found in these specific demo documents, respond with: "This information is not available in the demo environment data. Try switching to Production mode for general knowledge."`
+    }
 
     // Handle help command locally
     if (messageText.toLowerCase() === 'help') {
@@ -95,7 +105,7 @@ export default function ChatPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: input,
+          message: messageText,
           persona_id: 0
         })
       })
@@ -130,7 +140,13 @@ export default function ChatPage() {
     }
   }
 
-  const suggestions = [
+  const suggestions = mode === 'demo' ? [
+    'What are our critical security alerts?',
+    'What CVEs need immediate patching?',
+    'What is our current security score?',
+    'Tell me about alert ALT-001',
+    'What systems are affected by Emotet?'
+  ] : [
     'What are our critical vulnerabilities?',
     'Summarize our security posture',
     'What should we prioritize?',
@@ -142,6 +158,31 @@ export default function ChatPage() {
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-card-foreground mb-2">HornsIQ Assistant</h1>
         <p className="text-muted-foreground">AI-powered security intelligence</p>
+
+        {/* Mode Toggle */}
+        <div className="flex items-center space-x-3 mt-4 p-3 bg-card border border-border rounded-lg">
+          <span className="text-sm font-medium text-muted-foreground">Query Mode:</span>
+          <button
+            onClick={() => setMode('production')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              mode === 'production'
+                ? 'bg-horns-blue text-white shadow-md'
+                : 'bg-secondary text-foreground hover:bg-muted'
+            }`}
+          >
+            Production Knowledge
+          </button>
+          <button
+            onClick={() => setMode('demo')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              mode === 'demo'
+                ? 'bg-horns-purple text-white shadow-md'
+                : 'bg-secondary text-foreground hover:bg-muted'
+            }`}
+          >
+            🎯 Demo Environment
+          </button>
+        </div>
       </div>
 
       {/* Chat Messages */}
