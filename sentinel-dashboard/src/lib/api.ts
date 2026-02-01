@@ -14,7 +14,13 @@ export function getApiUrl(): string {
   // Client-side - use current hostname
   const hostname = window.location.hostname
 
-  // Use the same hostname but with API port (8001)
+  // If accessing through tunnel domain (mikedeez.top), use relative path
+  // The tunnel routes /api/* to localhost:8001
+  if (hostname.includes('mikedeez.top')) {
+    return '' // Empty string = relative path, so /api/stats works
+  }
+
+  // For local/tailscale access, use port-based routing
   const protocol = window.location.protocol
   return `${protocol}//${hostname}:8001`
 }
@@ -32,7 +38,13 @@ export function getHornsIQUrl(): string {
   // Client-side - use current hostname
   const hostname = window.location.hostname
 
-  // Use the same hostname but with HornsIQ port (3978)
+  // If accessing through tunnel domain (mikedeez.top), use relative path
+  // The tunnel routes /chat/* to localhost:3978
+  if (hostname.includes('mikedeez.top')) {
+    return '' // Empty string = relative path, so /chat works
+  }
+
+  // For local/tailscale access, use port-based routing
   const protocol = window.location.protocol
   return `${protocol}//${hostname}:3978`
 }
